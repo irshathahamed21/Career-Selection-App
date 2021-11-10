@@ -30,22 +30,20 @@ export default function Signup(){
         setFlag1(!flag1)
       };
 
-      // both pwd      
+       
+      // pwd2
       const pwd2_hndlechange = (prop) => (event) => {
         setPwd2(event.target.value);
       };
 
-      // pwd2
       const handleClickShowPassword2 = () => {
         setFlag2(!flag2)
       };
+       // both pwd    
       const handleMouseDownPassword = (event) => {
         event.preventDefault();
       };
-    
-
-
-
+      
 return(
 <>
   <div className="Container_mobile">
@@ -61,7 +59,7 @@ return(
       </div>
       <div className="inpt_feilds">
           <div className="inpt_padding">
-               <TextField value={name} onChange={(e)=>{setName(e.target.value);console.log(name)}} id="outlined-basic" label="Full Name" variant="outlined" className="name_inpt" size="small"/>
+            <TextField value={name} onChange={(e)=>{setName(e.target.value);console.log(name)}} id="outlined-basic" label="Full Name" variant="outlined" className="name_inpt" size="small"/>
           </div>
           <div className="inpt_padding">
             <TextField  value={phoneno} onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  id="outlined-basic" label="Phone No " variant="outlined" className="name_inpt" size="small"/>
@@ -72,73 +70,73 @@ return(
              
           <div className="inpt_padding">
             <FormControl sx={{ m: 1, minWidth: 120 }} className="name_inpt">
-            <InputLabel id="demo-simple-select-helper-label" size="small">Education</InputLabel>
-            <Select size="small"
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            value={education}
-            label="Education"
-            onChange={handleChange_option}>
-            <MenuItem value={""} size="small">
-              <em>Select Education</em>
-            </MenuItem>
-            <MenuItem size="small" value={10}>Class 8-9</MenuItem>
-            <MenuItem size="small" value={20}>Class 10-12</MenuItem>
-            <MenuItem size="small" value={30}>Graduate</MenuItem>
-            <MenuItem size="small" value={"others"}>
-              <em>Other</em>
-            </MenuItem>
-            </Select>
+              <InputLabel id="demo-simple-select-helper-label" size="small">Education</InputLabel>
+              <Select size="small"
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                value={education}
+                label="Education"
+                onChange={handleChange_option}>
+                  <MenuItem value={""} size="small">
+                    <em>Select Education</em>
+                  </MenuItem>
+                    <MenuItem size="small" value={10}>Class 8-9</MenuItem>
+                    <MenuItem size="small" value={20}>Class 10-12</MenuItem>
+                    <MenuItem size="small" value={30}>Graduate</MenuItem>
+                  <MenuItem size="small" value={"others"}>
+                    <em>Other</em>
+                  </MenuItem>
+              </Select>
             </FormControl>
           </div>
            {/* pwd1 */}
           <div className="inpt_padding">
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" >
-            <InputLabel htmlFor="outlined-adornment-password" size="small" >Password</InputLabel>
-            <OutlinedInput size="small"
-            id="outlined-adornment-password"
-            type={flag1 ? 'text' : 'password'}
-            value={pwd1}
-            onChange={pwd1_hndlechange('password')}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword1}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                  >
-                  {flag1 ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-            />
+              <InputLabel htmlFor="outlined-adornment-password" size="small" >Password</InputLabel>
+              <OutlinedInput size="small"
+                id="outlined-adornment-password"
+                type={flag1 ? 'text' : 'password'}
+                value={pwd1}
+                onChange={pwd1_hndlechange('password')}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword1}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                      >
+                      {flag1 ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
             </FormControl>
           </div>
           {/* pwd2 */}
           <div className="inpt_padding">
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" >
-            <InputLabel htmlFor="outlined-adornment-password" size="small" className="cnfm_pwd" >Confirm Password</InputLabel>
-            <OutlinedInput size="small"
-            id="outlined-adornment-password"
-            type={flag2 ? 'text' : 'password'}
-            value={pwd2}
-            onChange={pwd2_hndlechange('password')}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword2}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                  >
-                  {flag2 ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-            />
+              <InputLabel htmlFor="outlined-adornment-password" size="small" className="cnfm_pwd" >Confirm Password</InputLabel>
+              <OutlinedInput size="small"
+                id="outlined-adornment-password"
+                type={flag2 ? 'text' : 'password'}
+                value={pwd2}
+                onChange={pwd2_hndlechange('password')}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword2}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                      >
+                      {flag2 ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
             </FormControl>
           </div>
           <div className="t_c_div">
