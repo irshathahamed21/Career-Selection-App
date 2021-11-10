@@ -5,11 +5,12 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
 import axios from "axios";
+import {Link} from "react-router-dom"
 const initstate={
   phoneNumber:Number(""),
   password: ""
 }
-export default function Signup(){
+export default function Login(){
   const [form,setForm]=React.useState(initstate)
   const [phoneno,setPhoneno]= React.useState("")
   const [pwd1,setPwd1] = React.useState("")
@@ -150,7 +151,7 @@ return (
     </div>
     <div className="login_part_login_pge">
       <p className="sign_info">New to Education?</p>
-      <p className="login_link">Create Account</p>
+      <Link to="/Login">  <p className="login_link">Create Account</p></Link>
     </div>
   </div>
 </>

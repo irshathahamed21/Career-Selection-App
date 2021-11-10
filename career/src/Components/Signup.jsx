@@ -325,8 +325,8 @@ return(
           </div>
         <div className="login_part">
           <p className="sign_info">Already have an account?</p>
-         <p className="login_link">Log in</p>
-         <Link to="/Login">Yes</Link>
+          <Link to="/Signup"> <p className="login_link">Log in</p></Link>
+        
         </div>
   </div>
 </>
