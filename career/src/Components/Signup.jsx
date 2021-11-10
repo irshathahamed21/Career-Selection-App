@@ -4,6 +4,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
+import {Link} from "react-router-dom"
 import axios from "axios";
 
 const initstate={
@@ -324,7 +325,8 @@ return(
           </div>
         <div className="login_part">
           <p className="sign_info">Already have an account?</p>
-          <p className="login_link">Log in</p>
+         <p className="login_link">Log in</p>
+         <Link to="/Login">Yes</Link>
         </div>
   </div>
 </>

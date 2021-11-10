@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Signup from './Components/Signup';
-import Login from './Components/Login';
+import App from './App'
 // import {Home} from "./Components/home"
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter  } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Home /> */}
-    <Login />
-    <Signup />
+    <BrowserRouter>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
 );
