@@ -1,0 +1,171 @@
+ we start the server 
+  refer this package : https://www.npmjs.com/package/json-server
+
+install server globally refer below link
+ 
+ After, we created a custom database named db.json
+  you can name anything you want.
+
+Then in the folder of introduction where we have stored the db.json
+ we run this command
+    json-server db.json --port 3001 --watch
+ we can choose any port we want 
+
+this server is for development not fpor production
+
+ Then we started working in the components and App.js
+
+ during fetching don't write async function in the jsx functions
+ because jsx functions will return a promise
+
+ const [data, setData] = useState([])
+  fetch("http://localhost:3001/todos")
+  .then((d) =>d.json())
+  .then((res) => {
+    setData(res)
+  }) 
+  this above is wrong for making network request
+
+
+
+any components has three phases 
+mounting - means mount on a web page 
+updating - means updating data on the components
+removing - deleting 
+
+
+
+
+
+
+function App() {
+  const [data, setData] = useState([])     1
+ 
+ useEffect(()=> {
+   fetch("http://localhost:3001/todos")      3
+   .then((d) => d.json)
+   .then((res) => {
+
+   })
+ })
+  return (
+    <>
+    <div>
+      {console.log(data)}
+    </div>                                  2
+    <Counter/>
+     </>
+    
+  
+  )
+}
+
+react will  first create the states then comes to useEffect and the useeffect function pushed into 
+execution stack for later exection then moves into the html elements render/ mount the html elements to the webpage
+then it will go useEffect functions to execute
+
+function App() {
+  const [data, setData] = useState([])
+ 
+ useEffect(()=> {
+   fetch("http://localhost:3001/todos")
+   .then((d) => d.json())
+   .then((res) => {
+     console.log(res)
+     setData(res)
+   })
+ })
+  return (
+   
+    <div className = "heading">
+      <Counter/>
+      {data.map((e) => (
+      <div key = {e.id}>
+      {e.title}
+
+      </div>)) }
+
+    </div>
+    this above code will give a  infinte requests it create a states then push useeffect function onto the stack
+    mount html elements and then useeffect function is executed then process again starts from create state push function into the stack, mount html elements to stop this we use dependency array giving as a secong argument
+
+
+function App() {
+  const [data, setData] = useState([])
+ 
+ useEffect(()=> {
+   fetch("http://localhost:3001/todos")
+   .then((d) => d.json())
+   .then((res) => {
+     console.log(res)
+     setData(res)
+   })
+ },[])
+  return (
+   
+    <div className = "heading">
+      <Counter/>
+      {data.map((e) => (
+      <div key = {e.id}>
+      {e.title}
+
+      </div>)) }
+
+    </div>
+
+
+
+react will  first create the states then comes to useEffect and the useeffect function pushed into 
+execution stack for later exection then moves into the html elements render/ mount the html elements to the webpage
+then it will go useEffect functions to execute
+    because of empty array in line 103 react execute useeffect function only once
+
+
+--------------------------------------------------------
+
+
+first time useeffect function called during the mounting phase
+   then empty array has a variable and when the variable value changes
+   then only the useeffect function will be called for second time.
+
+
+function App() {
+  const [data, setData] = useState([])
+  const[age,setAge] =useState(0)
+ 
+ useEffect(()=> {
+   fetch("http://localhost:3001/todos")
+   .then((d) => d.json())
+   .then((res) => {
+     console.log(res)
+     setData(res)
+   })
+ },[age])
+  return (
+   
+    <div className = "heading">
+      <Counter/>
+      {data.map((e) => (
+      <div key = {e.id}>
+      {e.title}
+      
+
+
+      </div>)) }
+
+      <button onClick = {() => 
+      {setAge(age+1)}}> update age </button>
+
+    </div>
+  
+     
+    
+  
+  )
+}
+In empty array nothing to keep an eye for useeffect function
+
+but in [age] age variable is changed then only useeffect called for second time
+also u can put two variables in the array [age, counter]
+
+------------------------------------------------
