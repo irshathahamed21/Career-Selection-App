@@ -5,14 +5,16 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
 import axios from "axios";
+
+const initstate={
+        email:"",
+        fullName:"",
+        phoneNumber:Number(""),
+        education:"",
+        password: ""
+      }
 export default function Signup(){
-    const [form,setForm]=React.useState({
-      email:"",
-      fullName:"",
-      phoneNumber:Number(""),
-      education:"",
-      password: ""
-    })
+    const [form,setForm]=React.useState(initstate)
 
     const [name,setName]=React.useState("")
     const [phoneno,setPhoneno]= React.useState("")
@@ -52,17 +54,19 @@ export default function Signup(){
       const handleMouseDownPassword = (event) => {
         event.preventDefault();
       };
-      async function receiver() {
-        try {
-          // const {data}=
-          await axios.post("http://localhost:2345/register",form)
-        } catch (error) {
-          console.log(error);
-        }
-        }
-      const submit=()=>{
-        validation()
+      
+  
 
+      const submit=()=>{
+        setForm(initstate)
+        validation()
+        if(check===false){
+          setcheckflag(true)
+          console.log("dsnt match");
+        }
+        else if(check===true){
+          setcheckflag(false)
+        
         if(check===true &&
              pwd_match===false &&
             email_flag===false &&
@@ -70,19 +74,31 @@ export default function Signup(){
             phoneflag===false && 
             education_flag===false && 
             pwd1_flag1===false && 
-            pwd2_flag2===false)
-        {
-        setForm({
-          email:email,
-          fullName:name,
-          phoneNumber:phoneno,
-          education:education,
-          password: pwd1
-        })
-        console.log(form);
-        receiver()
+            pwd2_flag2===false){
+              
+          
+                form.email=email
+                form.fullName=name
+                form.phoneNumber=phoneno
+                form.education=education
+                form.password=pwd1
+            
+              console.log(email,phoneno);
+        console.log("matched");
+        receiver(form)
       } 
-      }
+    }
+}
+  const [userverify,setuserverify]=React.useState(false)
+async function receiver(data) { 
+  console.log(data.email,data.phoneno);
+  try {
+   await axios.post("http://localhost:2345/register",data).then(res => (console.log(res.data)))       
+   setuserverify(false)
+  } catch (error) {
+    setuserverify(true)
+  }
+  }
       const [email_flag,setEmail_flag]= React.useState(false)
       const [Name_flag,setName_flag]=React.useState(false)
       const [phoneflag,setphoneflag]=React.useState(false)
@@ -91,15 +107,20 @@ export default function Signup(){
       const [pwd2_flag2,setFlag2_flag2] = React.useState(false)
       const [pwd_match,setpwd_match]=React.useState(false)
       const [check,setcheck]=React.useState(false)
+      const [checkflag,setcheckflag]=React.useState(false)
+      
+      
+      let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+
       const validation=()=>{
        
-        if(!/^[a-zA-Z0-9!@#$%^&*]{6,16}$/i.test(pwd1)){
+        if(!strongPassword.test(pwd1)){
           setFlag1_flag1(true)
         }else{
           setFlag1_flag1(false)
         }
 
-        if(!/^[a-zA-Z0-9!@#$%^&*]{6,16}$/i.test(pwd2)){
+        if(!strongPassword.test(pwd2)){
 
           setFlag2_flag2(true)
         }
@@ -259,14 +280,16 @@ return(
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                       >
-                      {pwd2_flag2 ? <VisibilityOff /> : <Visibility />}
+                      {flag2 ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
                 label={pwd2_flag2? "error" : "Password" }
               />
                <FormHelperText>{pwd2_flag2? "Password Required" : (pwd_match? "Password Missmatch" : "" ) }</FormHelperText>
-               <FormHelperText>{check? "":"werewr" }</FormHelperText>
+               <FormHelperText>{checkflag? "Please apply t&c":""  }</FormHelperText>
+               <FormHelperText>{userverify? "User already exists or somethin wrong" : "" }</FormHelperText>
+               
             </FormControl>
           </div>
           <div className="t_c_div" onClick={()=>{setcheck(!check)}}>
@@ -277,7 +300,6 @@ return(
                 <p className="t_c_condtion">By Signing up, you confirm you accept our </p>
                 <p className="t_and_c">Terms of use</p>
               </div>
-              
           </div>
           
 

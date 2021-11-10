@@ -1,28 +1,72 @@
 import React from "react";
-import {TextField,Button,OutlinedInput,InputLabel,InputAdornment,IconButton,FormControl} from "@mui/material"
+import {TextField,Button,FormHelperText,OutlinedInput,InputLabel,InputAdornment,IconButton,FormControl} from "@mui/material"
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
+import axios from "axios";
+const initstate={
+  phoneNumber:Number(""),
+  password: ""
+}
 export default function Signup(){
-   
-      const [phoneno,setPhoneno]=React.useState("")
-      const [pwd1,setPwd1] = React.useState("")
-      const [flag1,setFlag1] = React.useState(false)
+  const [form,setForm]=React.useState(initstate)
+  const [phoneno,setPhoneno]= React.useState("")
+  const [pwd1,setPwd1] = React.useState("")
+  const [flag1,setFlag1] = React.useState(false)
      
   
-        // pwd1
-        const pwd1_hndlechange = (prop) => (event) => {
-          setPwd1(event.target.value);
-        };
-        const handleClickShowPassword1 = () => {
-          setFlag1(!flag1)
-        };
-        const handleMouseDownPassword = (event) => {
-          event.preventDefault();
-        };
-    
        
+      // pwd1
+      const pwd1_hndlechange = (prop) => (event) => {
+        setPwd1(event.target.value);
+      };
+      const handleClickShowPassword1 = () => {
+        setFlag1(!flag1)
+      };
+      const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+      };
+
+      const [pwd1_flag1,setFlag1_flag1] = React.useState(false)
+      const [phoneflag,setphoneflag]=React.useState(false)
+      let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+      const validation=()=>{
+       
+        if(!strongPassword.test(pwd1)){
+          setFlag1_flag1(true)
+        }else{
+          setFlag1_flag1(false)
+        }
+        if(!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(phoneno)){
+          setphoneflag(true)
+        }else{
+          setphoneflag(false)
+        }
+      }  
+      const submit=()=>{
+        setForm(initstate)
+        validation()
+        if(
+            phoneflag===false &&
+            pwd1_flag1===false){
+          
+                form.phoneNumber=phoneno
+                form.password=pwd1
+    
+        receiver(form)
+      } 
+    }
+    const [userverify,setuserverify]=React.useState(false)
+    async function receiver(data) { 
+      
+      try {
+      await axios.post("http://localhost:2345/login",data).then(res => (console.log(res.data)))       
+      setuserverify(false)
+      } catch (error) {
+        setuserverify(true)
+      }
+      }
 return (
 <>
   <div className="Container_mobile">
@@ -41,41 +85,44 @@ return (
     </div>
     <div className="inpt_feilds">
       <div className="inpt_padding">
-        <TextField  
-          //  error
-          //  helperText="dd"
-          // label="Error"
-          value={phoneno} 
-          onChange={(e)=>{setPhoneno(e.target.value)}} 
-          id="outlined-basic" 
-          label="Phone No" 
-          variant="outlined" 
-          className="name_inpt" 
-          size="small"/>
+            <TextField  
+            error={phoneflag}
+            label={phoneflag? "error" : "Phone No" } 
+            helperText={phoneflag ? "Phone No Required" : "" }
+            value={phoneno}  
+            onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  
+            id="outlined-basic" 
+           
+            variant="outlined" 
+            className="name_inpt" 
+            size="small"/>
       </div>
       <div className="inpt_padding">
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" >
-          <InputLabel htmlFor="outlined-adornment-password" size="small" >Password</InputLabel>
-            <OutlinedInput size="small"
-              id="outlined-adornment-password"
-              type={flag1 ? 'text' : 'password'}
-              value={pwd1}
-              onChange={pwd1_hndlechange('password')}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword1}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                    >
-                    {flag1 ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Password"
-            />
-        </FormControl> 
+      <FormControl  error={pwd1_flag1}   sx={{ m: 1, width: '25ch' }} variant="outlined" >
+              <InputLabel htmlFor="outlined-adornment-password" size="small" >{pwd1_flag1? "error" : "Password" }</InputLabel>
+              <OutlinedInput size="small"
+                id="outlined-adornment-password"
+                type={flag1 ? 'text' : 'password'}
+                
+                value={pwd1}
+                onChange={pwd1_hndlechange('password')}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword1}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                      >
+                      {flag1 ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label={pwd1_flag1? "error" : "Password" } 
+              />
+               <FormHelperText>{pwd1_flag1? "Password Required" : "" }</FormHelperText>
+               <FormHelperText>{userverify? "Phone no and Password wrong or somethin wrong" : "" }</FormHelperText>
+            </FormControl>
         </div>   
         <div className="t_c_div_login">
           <div className="frgot_pwd_div">
@@ -83,7 +130,7 @@ return (
           </div>     
         </div>
     </div>
-    <div className="btn_div">
+    <div className="btn_div"  onClick={submit} >
       <Button variant="contained" >Login</Button>
     </div>       
     <div>
