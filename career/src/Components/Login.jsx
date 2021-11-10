@@ -1,11 +1,11 @@
 import React from "react";
-import {TextField,Button,OutlinedInput,InputLabel,InputAdornment,MenuItem,Select,IconButton,FormControl} from "@mui/material"
+import {TextField,Button,OutlinedInput,InputLabel,InputAdornment,IconButton,FormControl} from "@mui/material"
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
-
 import "./Singup.css"
 export default function Signup(){
+   
       const [phoneno,setPhoneno]=React.useState("")
       const [pwd1,setPwd1] = React.useState("")
       const [flag1,setFlag1] = React.useState(false)

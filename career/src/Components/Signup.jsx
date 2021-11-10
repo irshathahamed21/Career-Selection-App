@@ -1,10 +1,19 @@
 import React from "react";
-import {TextField,Button,OutlinedInput,InputLabel,InputAdornment,MenuItem,Select,IconButton,FormControl} from "@mui/material"
+import {TextField,Button,FormHelperText,OutlinedInput,InputLabel,InputAdornment,MenuItem,Select,IconButton,FormControl} from "@mui/material"
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
+import axios from "axios";
 export default function Signup(){
+    const [form,setForm]=React.useState({
+      email:"",
+      fullName:"",
+      phoneNumber:Number(""),
+      education:"",
+      password: ""
+    })
+
     const [name,setName]=React.useState("")
     const [phoneno,setPhoneno]= React.useState("")
     const [email,setEmail]= React.useState("")     
@@ -43,7 +52,92 @@ export default function Signup(){
       const handleMouseDownPassword = (event) => {
         event.preventDefault();
       };
-      
+      async function receiver() {
+        try {
+          // const {data}=
+          await axios.post("http://localhost:2345/register",form)
+        } catch (error) {
+          console.log(error);
+        }
+        }
+      const submit=()=>{
+        validation()
+
+        if(check===true &&
+             pwd_match===false &&
+            email_flag===false &&
+            Name_flag===false && 
+            phoneflag===false && 
+            education_flag===false && 
+            pwd1_flag1===false && 
+            pwd2_flag2===false)
+        {
+        setForm({
+          email:email,
+          fullName:name,
+          phoneNumber:phoneno,
+          education:education,
+          password: pwd1
+        })
+        console.log(form);
+        receiver()
+      } 
+      }
+      const [email_flag,setEmail_flag]= React.useState(false)
+      const [Name_flag,setName_flag]=React.useState(false)
+      const [phoneflag,setphoneflag]=React.useState(false)
+      const [education_flag,setEducation_flag]=React.useState(false)
+      const [pwd1_flag1,setFlag1_flag1] = React.useState(false)
+      const [pwd2_flag2,setFlag2_flag2] = React.useState(false)
+      const [pwd_match,setpwd_match]=React.useState(false)
+      const [check,setcheck]=React.useState(false)
+      const validation=()=>{
+       
+        if(!/^[a-zA-Z0-9!@#$%^&*]{6,16}$/i.test(pwd1)){
+          setFlag1_flag1(true)
+        }else{
+          setFlag1_flag1(false)
+        }
+
+        if(!/^[a-zA-Z0-9!@#$%^&*]{6,16}$/i.test(pwd2)){
+
+          setFlag2_flag2(true)
+        }
+        else{
+          setFlag2_flag2(false)
+        }
+
+        if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+          setEmail_flag(true)
+        }
+        else{
+          setEmail_flag(false)
+        }
+
+        if(name===""){
+          setName_flag(true)
+        }else{
+          setName_flag(false)
+        }
+
+        if(!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(phoneno)){
+          setphoneflag(true)
+        }else{
+          setphoneflag(false)
+        }
+        
+        if(education===""){
+          setEducation_flag(true)
+        }else{ 
+          setEducation_flag(false)
+        }
+        if(pwd1===pwd2 && pwd1_flag1===false && pwd2_flag2===false){
+          setpwd_match(false)
+        }else{
+          setpwd_match(true)
+        }
+      }   
+
 return(
 <>
   <div className="Container_mobile">
@@ -59,43 +153,76 @@ return(
       </div>
       <div className="inpt_feilds">
           <div className="inpt_padding">
-            <TextField value={name} onChange={(e)=>{setName(e.target.value);console.log(name)}} id="outlined-basic" label="Full Name" variant="outlined" className="name_inpt" size="small"/>
+            <TextField 
+             error={Name_flag}
+             label={Name_flag? "error" : "Full Name" } 
+             helperText={Name_flag ? "Name is required" : "" }
+            value={name} 
+            onChange={(e)=>{setName(e.target.value);}} 
+            id="outlined-basic" 
+            variant="outlined" 
+            className="name_inpt" 
+            size="small"/>
           </div>
           <div className="inpt_padding">
-            <TextField  value={phoneno} onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  id="outlined-basic" label="Phone No " variant="outlined" className="name_inpt" size="small"/>
+            <TextField  
+            error={phoneflag}
+            label={phoneflag? "error" : "Phone No" } 
+            helperText={phoneflag ? "Phone No Required" : "" }
+            value={phoneno}  
+            onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  
+            id="outlined-basic" 
+           
+            variant="outlined" 
+            className="name_inpt" 
+            size="small"/>
           </div>
           <div className="inpt_padding">
-            <TextField value={email} onChange={(e)=>{setEmail(e.target.value);console.log(email)}} id="outlined-basic" label="Email" variant="outlined"className="name_inpt" size="small"/>
+            <TextField 
+            error={email_flag}
+            label={email_flag? "error" : "Email" } 
+            helperText={email_flag ? "Invalid email address" : "" }
+            value={email}  
+            onChange={(e)=>{setEmail(e.target.value);}} 
+            id="outlined-basic" 
+            variant="outlined" 
+            className="name_inpt" 
+            size="small"/>
           </div>
              
           <div className="inpt_padding">
-            <FormControl sx={{ m: 1, minWidth: 120 }} className="name_inpt">
-              <InputLabel id="demo-simple-select-helper-label" size="small">Education</InputLabel>
+            <FormControl  error={education_flag}  
+                 sx={{ m: 1, minWidth: 120 }} className="name_inpt">
+              <InputLabel  
+                id="demo-simple-select-helper-label" 
+                size="small">{education_flag? "error" : "Education"}</InputLabel>
               <Select size="small"
                 labelId="demo-simple-select-helper-label"
                 id="demo-simple-select-helper"
                 value={education}
-                label="Education"
+              label={education_flag? "error" : "Education" } 
                 onChange={handleChange_option}>
-                  <MenuItem value={""} size="small">
+                  <MenuItem value={""} size="small" >
                     <em>Select Education</em>
                   </MenuItem>
-                    <MenuItem size="small" value={10}>Class 8-9</MenuItem>
-                    <MenuItem size="small" value={20}>Class 10-12</MenuItem>
-                    <MenuItem size="small" value={30}>Graduate</MenuItem>
+                    <MenuItem size="small" value={"8_9"}>Class 8-9</MenuItem>
+                    <MenuItem size="small" value={"10_12"}>Class 10-12</MenuItem>
+                    <MenuItem size="small" value={"graduate"}>Graduate</MenuItem>
                   <MenuItem size="small" value={"others"}>
                     <em>Other</em>
                   </MenuItem>
               </Select>
+              <FormHelperText>{education_flag? "Education Required" : "" }</FormHelperText>
             </FormControl>
           </div>
            {/* pwd1 */}
           <div className="inpt_padding">
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" >
-              <InputLabel htmlFor="outlined-adornment-password" size="small" >Password</InputLabel>
+            <FormControl  error={pwd1_flag1}   sx={{ m: 1, width: '25ch' }} variant="outlined" >
+              <InputLabel htmlFor="outlined-adornment-password" size="small" >{pwd1_flag1? "error" : "Password" }</InputLabel>
               <OutlinedInput size="small"
                 id="outlined-adornment-password"
                 type={flag1 ? 'text' : 'password'}
+                
                 value={pwd1}
                 onChange={pwd1_hndlechange('password')}
                 endAdornment={
@@ -110,14 +237,15 @@ return(
                     </IconButton>
                   </InputAdornment>
                 }
-                label="Password"
+                label={pwd1_flag1? "error" : "Password" } 
               />
+               <FormHelperText>{pwd1_flag1? "Password Required" : "" }</FormHelperText>
             </FormControl>
           </div>
           {/* pwd2 */}
           <div className="inpt_padding">
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined" >
-              <InputLabel htmlFor="outlined-adornment-password" size="small" className="cnfm_pwd" >Confirm Password</InputLabel>
+            <FormControl  error={pwd2_flag2}   sx={{ m: 1, width: '25ch' }} variant="outlined" >
+              <InputLabel htmlFor="outlined-adornment-password" size="small" className="cnfm_pwd" >{pwd2_flag2? "error" : "Confirm Password" }</InputLabel>
               <OutlinedInput size="small"
                 id="outlined-adornment-password"
                 type={flag2 ? 'text' : 'password'}
@@ -131,27 +259,30 @@ return(
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                       >
-                      {flag2 ? <VisibilityOff /> : <Visibility />}
+                      {pwd2_flag2 ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
-                label="Password"
+                label={pwd2_flag2? "error" : "Password" }
               />
+               <FormHelperText>{pwd2_flag2? "Password Required" : (pwd_match? "Password Missmatch" : "" ) }</FormHelperText>
+               <FormHelperText>{check? "":"werewr" }</FormHelperText>
             </FormControl>
           </div>
-          <div className="t_c_div">
+          <div className="t_c_div" onClick={()=>{setcheck(!check)}}>
               <div className="ckbx_div">
-                <input type="checkbox" name="" id="" />
+                <input type="checkbox" name="" id=""  checked={check}/>
               </div> 
               <div >
                 <p className="t_c_condtion">By Signing up, you confirm you accept our </p>
                 <p className="t_and_c">Terms of use</p>
               </div>
+              
           </div>
-           
+          
 
       </div>
-          <div className="btn_div">
+          <div className="btn_div" onClick={submit}>
             <Button variant="contained" >Sign Up</Button>
           </div>
           <div >
