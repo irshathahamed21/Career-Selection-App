@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const bcryptjs = require('bcryptjs');
-const appointments=require('./coach.model)
 // step 1 :- create the schema for user
 const userSchema = new mongoose.Schema({
-    email: {type: String, required: false, unique: true},
-    fullName:{type: String, required: true},
-    phoneNumber:{type:Number,required:true,unique: true},
-    education:{type: String, required: true},
+    email: {type: String, required: true, unique: true},
+    Name:{type: String, required: true},
+    phoneNumber:{type:Number,required:false,unique: true},
+    education:{type: String, required: false},
     password: {type: String, required: true, minLength: 8, maxLength: 100},
     intrests: [{type: String, required: false}],
-    appointments:[{type: ObjectId, required: false, ref: 'appointments'}]
+    appointments:[{type: mongoose.Schema.Types.ObjectId, required: false, ref: 'appointments'}]
 }, {
     versionKey: false,
     timestamps: true

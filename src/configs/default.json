@@ -1,0 +1,11 @@
+{
+    "mongoURI": "",
+    "jwtKey": "",
+    "appointmentStatus": [
+      "requested",
+      "accepted",
+      "rejected",
+      "completed",
+      "unknown"
+    ]
+  }
