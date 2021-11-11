@@ -9,7 +9,7 @@ import axios from "axios";
 
 const initstate={
         email:"",
-        fullName:"",
+        Name:"",
         phoneNumber:Number(""),
         education:"",
         password: ""
@@ -79,7 +79,7 @@ export default function Signup(){
               
           
                 form.email=email
-                form.fullName=name
+                form.Name=name
                 form.phoneNumber=phoneno
                 form.education=education
                 form.password=pwd1
@@ -90,12 +90,13 @@ export default function Signup(){
       } 
     }
 }
+
   const [userverify,setuserverify]=React.useState(false)
+  
 async function receiver(data) { 
   console.log(data.email,data.phoneno);
   try {
-   await axios.post("http://localhost:2345/register",data).then(res => (console.log(res.data)))      
-   
+   await axios.post("http://localhost:2345/register",data).then(res =>{console.log(res.data.token)})      
    setuserverify(false)
   } catch (error) {
     setuserverify(true)
@@ -327,7 +328,7 @@ return(
           </div>
         <div className="login_part">
           <p className="sign_info">Already have an account?</p>
-          <Link to="/Signup"> <p className="login_link">Log in</p></Link>
+          <Link to="/Login"> <p className="login_link">Log in</p></Link>
         
         </div>
   </div>

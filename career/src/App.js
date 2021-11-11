@@ -12,22 +12,23 @@ import {
 function App() {
   return (
     <>
-    <Careerexlporation /> 
-    <Intrest />
     <div>
   <Switch>
- <Route path="/Signup" exact />
-   <Signup />
+ <Route path="/" exact >
+   <Signup /> 
+  </Route>
+  <Route path="/Login" >
+    <Login />
+    </Route>
+    <Route path="/Intrest" >
+   <Intrest />
+    </Route>
+    <Route path="/Careerexlporation" >
+    <Careerexlporation /> 
+    </Route>
   </Switch>
-    </div>
-    
-    <div>
-    <Switch>
-   <Route path="/Login" />
-     <Login />
-    </Switch>
       </div>
-   
+  
       </>
   );
 }

@@ -5,14 +5,14 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
 import axios from "axios";
-import {Link} from "react-router-dom"
+import {Link,Redirect,useHistory} from "react-router-dom"
 const initstate={
-  phoneNumber:Number(""),
+ email:"",
   password: ""
 }
 export default function Login(){
   const [form,setForm]=React.useState(initstate)
-  const [phoneno,setPhoneno]= React.useState("")
+  const [email,setEmail]= React.useState("")
   const [pwd1,setPwd1] = React.useState("")
   const [flag1,setFlag1] = React.useState(false)
      
@@ -30,7 +30,7 @@ export default function Login(){
       };
 
       const [pwd1_flag1,setFlag1_flag1] = React.useState(false)
-      const [phoneflag,setphoneflag]=React.useState(false)
+      const [emailflag,setemailflag]=React.useState(false)
       let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
       const validation=()=>{
        
@@ -39,30 +39,43 @@ export default function Login(){
         }else{
           setFlag1_flag1(false)
         }
-        if(!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/i.test(phoneno)){
-          setphoneflag(true)
+        if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)){
+          setemailflag(true)
         }else{
-          setphoneflag(false)
+          setemailflag(false)
         }
       }  
       const submit=()=>{
         setForm(initstate)
         validation()
         if(
-            phoneflag===false &&
+            emailflag===false &&
             pwd1_flag1===false){
           
-                form.phoneNumber=phoneno
+                form.email=email
                 form.password=pwd1
     
         receiver(form)
       } 
     }
     const [userverify,setuserverify]=React.useState(false)
+    const [redirect,setRedirect]=React.useState(false)
+    let history = useHistory();
     async function receiver(data) { 
-      
       try {
-      await axios.post("http://localhost:2345/login",data).then(res => (console.log(res.data)))       
+      await axios.post("http://localhost:2345/login",data).then(res =>{
+        
+        history.push({
+        pathname: '/Intrest',
+        search:res.data.token, 
+        id:res.data.user._id, // query string
+        state: {  // location state
+          update: true, 
+        },
+      });
+    });
+    
+      // <Redirect to='/Intrest />
       setuserverify(false)
       } catch (error) {
         setuserverify(true)
@@ -87,11 +100,11 @@ return (
     <div className="inpt_feilds">
       <div className="inpt_padding">
             <TextField  
-            error={phoneflag}
-            label={phoneflag? "error" : "Phone No" } 
-            helperText={phoneflag ? "Phone No Required" : "" }
-            value={phoneno}  
-            onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  
+            error={emailflag}
+            label={emailflag? "error" : "Email" } 
+            helperText={emailflag ? "Valid Email Required" : "" }
+            value={email}  
+            onChange={(e)=>{setEmail(e.target.value);console.log(email)}}  
             id="outlined-basic" 
            
             variant="outlined" 
@@ -132,8 +145,8 @@ return (
         </div>
     </div>
     <div className="btn_div"  onClick={submit} >
-      <Button variant="contained" >Login</Button>
-    </div>       
+        <Button variant="contained" >Login</Button>
+      </div>       
     <div>
       <p className="or_section">or</p>
     </div>        
@@ -151,7 +164,7 @@ return (
     </div>
     <div className="login_part_login_pge">
       <p className="sign_info">New to Education?</p>
-      <Link to="/Login">  <p className="login_link">Create Account</p></Link>
+      <Link to="/">  <p className="login_link">Create Account</p></Link>
     </div>
   </div>
 </>

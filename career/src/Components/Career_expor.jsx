@@ -1,8 +1,8 @@
-import axios from "axios";
+
 import React from "react";
 import "./Intrest.css"
 import {Button} from "@mui/material"
-import Btn from "./Intrest_btn"
+
 export default function Careerexlporation(){
 return(
 <>
