@@ -4,7 +4,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
-import {Link} from "react-router-dom"
+import {Link,useHistory} from "react-router-dom"
 import axios from "axios";
 
 const initstate={
@@ -94,7 +94,8 @@ export default function Signup(){
 async function receiver(data) { 
   console.log(data.email,data.phoneno);
   try {
-   await axios.post("http://localhost:2345/register",data).then(res => (console.log(res.data)))       
+   await axios.post("http://localhost:2345/register",data).then(res => (console.log(res.data)))      
+   
    setuserverify(false)
   } catch (error) {
     setuserverify(true)
@@ -306,7 +307,8 @@ return(
 
       </div>
           <div className="btn_div" onClick={submit}>
-            <Button variant="contained" >Sign Up</Button>
+         <Button variant="contained" >Sign Up</Button> 
+         {/* <Link to="/Intrest">wwede</Link> */}
           </div>
           <div >
             <p className="or_section">or</p>

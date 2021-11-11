@@ -81,7 +81,7 @@ return (
       <div className="title_txt_login">
         {/* <img className="sign_title_sd_img" src="Images/Rectangle_title.png" alt="" /> */}
         <p className="login_title_wlcm">Welcome Back</p>
-        <p className="sign_title">Login to Education</p>
+        <p className="login_title">Login to Education</p>
       </div>
     </div>
     <div className="inpt_feilds">

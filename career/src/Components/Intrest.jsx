@@ -8,18 +8,19 @@ export default function Intrest(){
 return(
 <>
     <div className="Container_mobile">
+     
     <div>
       navbar
     </div>
-    <div className="title_parent_div">
+    <div className="title_parent_div_intr">
         <div className="vector_title_div">
         <img className="title_vector" src="images/Vector.png" alt="" />
         </div>
        
     </div>
-    <div className="title_div">
+    <div className="title_div_intr">
     <p className="intrest_title_wlcm">Tell us about yourself!</p>
-        <p className="sign_title">What you’re interested in?</p>
+        <p className="intrest_selection_title">What you’re interested in?</p>
         </div>
         <div className="btn_div">
             <Btn  label={"Business"} />
@@ -45,15 +46,26 @@ return(
         <div className="donw_ar_div">
         <img className="title_vector_down" src="images/Vector_down.png" alt="" />
         </div>
-  
-    {/* <div className="Container_mobile_gray"> */}
+   
     <div className="gray_div">
         <p className="intrest_title">I don’t know my interest!</p>
-        </div>
-  
+    </div>
+    <div className="img_section">
+    <img className="child_img" src="images/child.png" alt="" />
+    <div className="img_div">  
+    <div className="border_div2">
+    <div className="border_div1">
+    </div>
+    </div>
+    </div>
+    </div>
     <div className="gray_div">
         <p className="intrest_info">Take a small test to understand what you may like or is possible for you to go forward with.</p>
         </div>
-    </div>
+        <div className="expore">
+            <Button className="exp_btn"><p className="exp_btn_title">Interest Test</p></Button>
+        </div>
+        </div>
+
 </>    
 )} 

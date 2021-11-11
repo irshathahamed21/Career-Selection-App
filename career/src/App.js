@@ -3,6 +3,7 @@ import './App.css';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Intrest from './Components/Intrest';
+import Careerexlporation from "./Components/Career_expor";
 import {
   Switch, 
   Route
@@ -11,18 +12,19 @@ import {
 function App() {
   return (
     <>
- <Intrest />
-  <div className="App">
+    <Careerexlporation /> 
+    <Intrest />
+    <div>
   <Switch>
  <Route path="/Signup" exact />
-   {/* <Signup /> */}
+   <Signup />
   </Switch>
     </div>
-
-    <div className="App">
+    
+    <div>
     <Switch>
    <Route path="/Login" />
-     {/* <Login /> */}
+     <Login />
     </Switch>
       </div>
    

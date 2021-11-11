@@ -10,6 +10,7 @@
          border:1px solid #628E62 !important;
          margin: 4% 5% 0% 0% !important;
 }
+/* btn onclick  */
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root_2{
     text-transform: capitalize !important;
     background-color: #FFFFFF !important;
@@ -20,6 +21,7 @@
     margin: 4% 5% 0% 0% !important;
 
 }
+/* expolore btn */
 .exp_btn{
     text-transform: capitalize !important;
     background-color: #628E62 !important;
@@ -36,8 +38,10 @@ bottom: 54.16% !important;
 }
 .Container_mobile {
     width: 100%;
+    
+    
 }
-.title_parent_div{
+.title_parent_div_intr{
     padding: 0% 5% 4% 5%;
     width: 90%;
     display: flex;
@@ -64,9 +68,9 @@ bottom: 54.16% !important;
     letter-spacing: -0.02em;
     margin: 4% 0% 4% 0%;
     padding:0% 0% 0% 0%;
-    color: #3C4852;
+    color: #3C4852; 
   }
-  .sign_title{
+  /* .sign_title{
     font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 500;
@@ -78,8 +82,8 @@ letter-spacing: -0.02em;
 color: #3C4852;
     margin:0% 0% 0% 0%;
     padding:0% 0% 0% 0%;
-}
-.title_div{
+} */
+.title_div_intr{
     padding: 0% 5% 4% 5%;
     width: 90%;
     display: column;
@@ -121,7 +125,7 @@ margin: 0px 0px;
 }
 .exp_btn_title{
     position: static;
-width: 45px;
+width: auto;
 height: 16px;
 left: 92.5px;
 top: 16px;
@@ -149,10 +153,8 @@ width: 100%;
 height: 730.78px;
 left: 0px;
 top: 551.22px;
-
-/* Gradient puple */
-
-background: linear-gradient(262.51deg, rgba(118, 120, 226, 0.2) 22.36%, rgba(161, 121, 226, 0.2) 81.48%);
+background: rgb(251, 251, 253);
+background: linear-gradient(262deg, rgba(118,120,226,0.2) 36%, rgba(161,121,226,0.2)  81.48%);  
 }
 .donw_ar_div{
     text-align: center;
@@ -202,7 +204,117 @@ height: 8px;
     text-align: center;
     letter-spacing: -0.02em;
     color: #3C4852;
+}
+.img_div{
+    padding: 0% 30% 0% 30%;
+    margin: 0% 0% 0% 0%;
+    width: 40%;
+ 
+}
+.border_div1{
+    width: 102%;
+    height: 151px;
+    margin: 8% 0% 0% -10%;
+    background: #FFB600;
+}
+.border_div2{
+    width: 102%;
+    padding: 0% 0% 0% 0%;
+height: 151px;
+border: 1px solid #FFB600;
+box-sizing: border-box;
+}
+.child_img{
+    height: 26%;
+    margin: 3% 0% 0% 7%;
+    width: 75%;
+    position: absolute;
+}
+.img_section{
+    margin-top:8%;
+    margin-bottom:15%;
+}
 
+/* career exploration  */
+.career_p_div{
+    padding: 0% 5% 4% 5%;
+    width: 90%; 
+}
+.exporation_title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    /* width: 100%; */
+    justify-content: center;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 58%;
+    letter-spacing: -0.02em;
+    color: #3C4852;
+    margin: 0% 1% 0% 19%;
+    padding: 0% 0% 0% 0%;
+}
+.intrest_selection_title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    width: 100% !important;
+    /* justify-content: center; */
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 58%;
+    letter-spacing: -0.02em;
+    color: #3C4852;
+    margin: 0% 1% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+.list_info{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 137.19%;
+    display: flex;
+    width: 84%;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #3C4852;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+.yes_tick{
+    height: 30px;
+    width: 30px;
+}
+.yes_tick_div{
+    height: 30px;
+        width: 30px;
+        margin: 0% 6% 0% 0%;
+        padding: 0% 0% 0% 0%;
+}
+.list_div{
+    padding: 0% 5% 4% 5%;
+    width: 90%; 
+    display: flex;
+    flex-direction: row
+}
+.info_div{
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+}
+.line_ar-r{
+    margin: -21% 0% 0% 9%;
+    position: absolute;
+}
+.line_ar_r_img{
+    margin-top: 187px;
+    height: 328px;
 }
 }
 
