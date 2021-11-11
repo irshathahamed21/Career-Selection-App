@@ -7,7 +7,7 @@ const productController = require("./controllers/product.controller")
 const authController=require("./controllers/auth.controller")
 const userController=require("./controllers/user.controller")
 const slotController=require("./controllers/slot.controller")
-
+const coachController=require("./controllers/coach.controller")
 const appointmentController=require("./controllers/appointment.controller")
 const app = express();
 
@@ -42,7 +42,7 @@ app.get( '/auth/google/callback',
 app.post("/register", register);
 app.post("/login", login);
 app.use("/products", productController)
-
+app.use('/coach', coachController);
 app.use('/users', userController);
 app.use('/auth', authController);
 app.use('/slots', slotController);
