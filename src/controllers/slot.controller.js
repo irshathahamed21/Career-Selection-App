@@ -5,10 +5,10 @@ const router = express.Router();
 const auth = require('../middlewares/authenticate');
 const Slot = require('../models/slot.model');
 const Appointment = require('../models/appointment.model');
-const User = require('../models/user.model');
+const User = require('../models/coach.model');
 
 
-router.get('/coach:id', auth, async (req, res) => {
+router.get('/coach/:id', auth, async (req, res) => {
   try {
     const slot = await Slot.findOne({ coach: req.params.id }).populate('coach', [
       'name'
@@ -125,10 +125,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/user/:user_id', async (req, res) => {
+router.get('/user/:user_id', auth,async (req, res) => {
   try {
     const slot = await Slot.findOne({
-      user: req.params.user_id
+      user: req.user.id
     }).populate('user', ['name', 'email']);
 
     if (!slot) {
@@ -136,7 +136,7 @@ router.get('/user/:user_id', async (req, res) => {
     }
 
     const appointments = await Appointment.find({
-      seller: req.params.user_id,
+      coach: req.user.id,
       status: 'accepted'
     });
 
