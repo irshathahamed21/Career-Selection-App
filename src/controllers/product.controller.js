@@ -5,7 +5,7 @@ const router = express.Router();
 const Product = require("../models/product.model")
 
 const authenticate = require('../middlewares/authenticate')
-const authorize = require('../middlewares/authorize');
+//const authorize = require('../middlewares/authorize');
 
 
 router.post("",async function (req,res){
