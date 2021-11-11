@@ -22,7 +22,7 @@ router.get('/:user_type/:status?', auth, async (req, res) => {
     let condition = {};
     let populateBy = '';
     if (user_type === 'coach') {
-      condition.coach = req.coach.id;
+      condition.coach = req.body.coach_id;
       populateBy = 'coach';
     } else if (user_type === 'user') {
       condition.user = req.user.id;
@@ -94,7 +94,7 @@ router.post(
         return res.status(400).json({ msg: 'There is no slot available' });
       }
 
-      const appointmentFields = { user: user, coach: req.user.id };
+      const appointmentFields = { user: user, coach: req.body.coach_id };
       if (time) appointmentFields.time = time;
 
       const appointment = new Appointment(appointmentFields);
