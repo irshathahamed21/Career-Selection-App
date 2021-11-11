@@ -40,4 +40,4 @@ const SlotSchema = new mongoose.Schema({
   timestamps: true
 });
 
-module.exports = Slot = mongoose.model('slot', SlotSchema);
+module.exports =mongoose.model('slot', SlotSchema);

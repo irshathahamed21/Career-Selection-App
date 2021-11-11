@@ -4,14 +4,14 @@ const passport = require("./configs/passport")
 
 const {register, login} = require("./controllers/auth.controller")
 const productController = require("./controllers/product.controller")
-const authController=require("./controllers/auth.controller")
 const userController=require("./controllers/user.controller")
 const slotController=require("./controllers/slot.controller")
 const coachController=require("./controllers/coach.controller")
 const appointmentController=require("./controllers/appointment.controller")
 const app = express();
 
-app.use(express.json());
+app.use(express.json({ extended: false }));
+
 app.use(passport.initialize());
 
 passport.serializeUser(function({user, token}, done) {
@@ -42,9 +42,12 @@ app.get( '/auth/google/callback',
 app.post("/register", register);
 app.post("/login", login);
 app.use("/products", productController)
+
 app.use('/coach', coachController);
 app.use('/users', userController);
-app.use('/auth', authController);
+
+
 app.use('/slots', slotController);
+
 app.use('/appointment', appointmentController);
 module.exports = app;

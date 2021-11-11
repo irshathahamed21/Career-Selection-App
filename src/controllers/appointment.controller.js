@@ -18,7 +18,7 @@ router.get('/:user_type/:status?', auth, async (req, res) => {
       return res.status(400).json({ msg: 'Invalid user type' });
     }
 
-    let appointmentStatus = config.get('appointmentStatus');
+    let appointmentStatus = ['success','rejected'];
     let condition = {};
     let populateBy = '';
     if (user_type === 'coach') {
@@ -95,7 +95,7 @@ router.post(
       }
 
       const appointmentFields = { user: user, coach: req.user.id };
-      if (description) appointmentFields.description = description;
+      if (time) appointmentFields.time = time;
 
       const appointment = new Appointment(appointmentFields);
       await appointment.save();

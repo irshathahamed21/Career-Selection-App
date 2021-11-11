@@ -27,7 +27,7 @@ const AppointmentSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    enum: config.get('appointmentStatus'),
+    enum: "accepted",
     default: 'accepted'//'requested'
   },
   date: {
@@ -39,4 +39,4 @@ const AppointmentSchema = mongoose.Schema({
   timestamps: true
 });
 
-module.exports = Appointment = mongoose.model('appointment', AppointmentSchema);
+module.exports =  mongoose.model('appointment', AppointmentSchema);
