@@ -1,0 +1,208 @@
+
+@media(max-width: 600px) { 
+    /* btn_txt_capitalization */
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+         text-transform: capitalize !important;
+         background-color: #628E62 !important;
+         width: auto !important;
+         height: 41px !important;
+         border-radius: 50px !important;
+         border:1px solid #628E62 !important;
+         margin: 4% 5% 0% 0% !important;
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root_2{
+    text-transform: capitalize !important;
+    background-color: #FFFFFF !important;
+    width: auto !important;
+    height: 41px !important;
+    border-radius: 50px !important;
+    border:1px solid #628E62 !important;
+    margin: 4% 5% 0% 0% !important;
+
+}
+.exp_btn{
+    text-transform: capitalize !important;
+    background-color: #628E62 !important;
+    width: 54% !important;
+    height: 48px     !important;
+    padding: 16px 10px !important;
+    left: 25.06% !important;
+right: 18.06% !important;
+top: 42.09% !important;
+bottom: 54.16% !important;
+    border-radius: 50px !important;
+    border:1px solid #628E62 !important;
+    margin: 4% 5% 0% 0% !important;
+}
+.Container_mobile {
+    width: 100%;
+}
+.title_parent_div{
+    padding: 0% 5% 4% 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+   }
+.vector_title_div{
+   padding: 3% 10% 0% 0%;
+}
+.title_vector{
+    float: left;
+    position: absolute;
+     width: 10px;
+     height: 15px;
+     float: left;
+}
+.intrest_title_wlcm{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 131.69%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    margin: 4% 0% 4% 0%;
+    padding:0% 0% 0% 0%;
+    color: #3C4852;
+  }
+  .sign_title{
+    font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 32px;
+display: flex;
+align-items: center;
+letter-spacing: -0.02em;
+color: #3C4852;
+    margin:0% 0% 0% 0%;
+    padding:0% 0% 0% 0%;
+}
+.title_div{
+    padding: 0% 5% 4% 5%;
+    width: 90%;
+    display: column;
+    flex-direction: row;
+}
+
+.btn_title{
+    font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 131.69%;
+display: flex;
+align-items: center;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+}
+.btn_title_unclick{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 131.69%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #628E62;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+.pad{
+    padding: 0% 5% 4% 5%;
+}
+.exp_btn_title{
+    position: static;
+width: 45px;
+height: 16px;
+left: 92.5px;
+top: 16px;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.02em;
+
+/* Pure White */
+
+color: #FFFFFF;
+}
+.expore {
+    margin-top: 10%;
+    
+}
+.Container_mobile_gray{
+    position: absolute;
+width: 100%;
+height: 730.78px;
+left: 0px;
+top: 551.22px;
+
+/* Gradient puple */
+
+background: linear-gradient(262.51deg, rgba(118, 120, 226, 0.2) 22.36%, rgba(161, 121, 226, 0.2) 81.48%);
+}
+.donw_ar_div{
+    text-align: center;
+    padding: 8% 5% 0% 5%;
+    width: 90%;
+
+}
+.title_vector_down{
+position: absolute;
+width: 18px;
+height: 8px;
+}
+.gray_div{
+    padding: 0% 5% 0% 5%;
+    margin: 0% 0% 0% 0%;
+    width: 90%;
+
+}
+.intrest_title{
+    width: 100%;   
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #3C4852;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 0%;
+}
+.intrest_info{
+    width: 82%;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 131.69%;
+    padding: 0% 9% 0% 9%;
+    margin: 0% 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #3C4852;
+
+}
+}
+

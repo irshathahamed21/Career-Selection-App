@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
+import Intrest from './Components/Intrest';
 import {
   Switch, 
   Route
@@ -10,21 +11,21 @@ import {
 function App() {
   return (
     <>
-
+ <Intrest />
   <div className="App">
   <Switch>
  <Route path="/Signup" exact />
-   <Signup />
+   {/* <Signup /> */}
   </Switch>
     </div>
 
     <div className="App">
     <Switch>
    <Route path="/Login" />
-     <Login />
+     {/* <Login /> */}
     </Switch>
       </div>
-     
+   
       </>
   );
 }
