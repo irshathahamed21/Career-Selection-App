@@ -58,6 +58,10 @@ export default function Login(){
         receiver(form)
       } 
     }
+    const google_auth=()=>{
+      window.location.href = "http://localhost:2345/auth/google"
+    }
+    
     const [userverify,setuserverify]=React.useState(false)
     const [redirect,setRedirect]=React.useState(false)
     let history = useHistory();
@@ -151,9 +155,9 @@ return (
     </div>        
     <div>
       <div className="google_singup_img_div">
-        <div className="google_singup_img" alt="" >
+        <div className="google_singup_img" alt="" onClick={google_auth}>
           <SocialIcon url="https://www.google.co.in/" className="google_singup_img_icon"/> 
-          <p  className="btn_info">Continue with Faceboox</p> 
+          <p  className="btn_info">Continue with Google</p> 
         </div>       
         <div className="google_singup_img" alt="" >
             <SocialIcon url="https://www.facebook.com/" className="google_singup_img_icon"/>

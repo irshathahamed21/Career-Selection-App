@@ -62,7 +62,7 @@ return(
        
         </div>
     </div>
-    <div className="expore">
+    <div className="expore_caree_exp">
             <Button className="exp_btn"><p className="exp_btn_title">Lets Get Started</p></Button>
         </div>
     </div>

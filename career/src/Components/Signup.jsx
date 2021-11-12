@@ -94,15 +94,6 @@ export default function Signup(){
 
 const google_auth=()=>{
   window.location.href = "http://localhost:2345/auth/google"
-  async function google(){
-  try {
-    await axios.post("http://localhost:2345/auth/google")
-    setuserverify(false)
-   } catch (error) {
-     setuserverify(true)
-   }
-  }
-  
 }
 
 
