@@ -26,7 +26,7 @@
         min-width: 100% !important;
     border-radius: 50px !important;
     background: #628E62 !important;
-    font-family: Roboto !important;
+    font-family: 'Roboto', sans-serif !important;
     font-style: normal !important;
     font-weight: 500 !important;
     font-size: 13px !important;
@@ -230,10 +230,10 @@
         margin: 0% 0% 0% 0%;
     }
     .login_part{
-        padding: 0% 5% 5% 14%;
-    width: 80%;
-    display: grid;
-    grid-template-columns: 63% 30%;
+        padding: 0% 0% 5% 10%;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 63% 30%;
     }
   /* login css */
   .login_title_wlcm{
@@ -268,10 +268,10 @@
     color: #628E62;
   }
   .login_part_login_pge{
-    padding: 0% 5% 5% 15%;
-    width: 80%;
+    padding: 0% 1% 5% 9%;
+    width: 90%;
     display: grid;
-    grid-template-columns: 47% 34%;
+    grid-template-columns: 48% 33%;
   }
   .frgot_pwd_div{
     margin: 0% 0% 10% 69%;
@@ -285,6 +285,13 @@
     padding:0% 0% 0% 0%;
     width: 86%;
     text-align: center;
+  }
+  a{
+      text-decoration: none;
+  }
+  button{
+    text-transform: capitalize !important;
+  
   }
 }
 

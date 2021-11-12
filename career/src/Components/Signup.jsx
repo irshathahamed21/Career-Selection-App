@@ -207,7 +207,7 @@ return(
             <TextField  
             error={phoneflag}
             label={phoneflag? "error" : "Phone No" } 
-            helperText={phoneflag ? "Phone No Required" : "" }
+            helperText={phoneflag ? "Valid Phone No Required" : "" }
             value={phoneno}  
             onChange={(e)=>{setPhoneno(e.target.value);console.log(phoneno)}}  
             id="outlined-basic" 
@@ -220,7 +220,7 @@ return(
             <TextField 
             error={email_flag}
             label={email_flag? "error" : "Email" } 
-            helperText={email_flag ? "Invalid email address" : "" }
+            helperText={email_flag ? "Valid Email Address Required" : "" }
             value={email}  
             onChange={(e)=>{setEmail(e.target.value);}} 
             id="outlined-basic" 
@@ -332,7 +332,7 @@ return(
           <div>
            <div className="google_singup_img_div" >
            <div onClick={google_auth} className="google_singup_img" alt="" >
-                <SocialIcon url="https://www.google.co.in/" className="google_singup_img_icon"/> 
+                <SocialIcon url="https://www.google.co.in/"   className="google_singup_img_icon"/> 
                 <p  className="btn_info">Continue with Google</p> 
               </div>
               

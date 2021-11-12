@@ -63,7 +63,9 @@ return(
         </div>
     </div>
     <div className="expore_caree_exp">
-            <Button className="exp_btn"><p className="exp_btn_title">Lets Get Started</p></Button>
+            <Button onClick={()=>{
+  history.push("/Flashexpo");
+       }} className="exp_btn"><p className="exp_btn_title">Lets Get Started</p></Button>
         </div>
     </div>
 </>

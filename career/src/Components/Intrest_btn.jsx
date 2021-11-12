@@ -7,6 +7,11 @@ export default function Btn({label,value,Intrests_career,setIntrests_career}){
 
     const [flag1,setFlag1]= React.useState(false)
 
+    setTimeout(function(){ 
+        
+     }, 3000);
+
+
     return(
         <>
          <Button 

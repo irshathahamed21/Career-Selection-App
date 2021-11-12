@@ -44,8 +44,8 @@ async function receiver() {
        
         history.push({
         pathname: '/Careerexploration',
-        search:token,// query string
-        state: {  // location state
+        search:token,
+        state: {  
           update: true, 
         },
       });

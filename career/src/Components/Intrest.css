@@ -285,7 +285,7 @@ box-sizing: border-box;
     font-size: 16px;
     line-height: 137.19%;
     display: flex;
-    width: 84%;
+    width: 100%;
     align-items: center;
     letter-spacing: -0.02em;
     color: #3C4852;
@@ -324,5 +324,39 @@ box-sizing: border-box;
     margin-top: 10%;
     margin-bottom: 30%;
 }
+
+/* flash screen  */
+.Flash_title_ro{
+    position: absolute;
+    width: 68%;
+    top: 44%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFB600;
+}
+.Flash_div_ro{
+    width: 90%;
+    text-align: center;
+    padding: 0% 5% 0% 5%;
+    margin: 0% 0% 0% 0%;
+}
+.flash_img_ro{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.flash_title_div_ro{
+    padding: 0% 25% 0% 16%;
+    width: 50%;
+    margin: 0% 0% 0% 0%;
+}
+
 }
 
