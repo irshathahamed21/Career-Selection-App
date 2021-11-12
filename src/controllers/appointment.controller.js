@@ -153,7 +153,7 @@ router.put(
         { _id: id },
         { $set: appointment },
         { new: true }
-      ).populate('coach', ['name', 'email']);
+      ).populate('user', ['name', 'email']);
 
       res.json(appointment);
     } catch (error) {
