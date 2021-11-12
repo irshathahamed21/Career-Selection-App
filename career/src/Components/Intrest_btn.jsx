@@ -3,7 +3,7 @@ import React from "react";
 import "./Intrest.css"
 import {Button} from "@mui/material"
 
-export default function Btn({label,value,Intrests,setIntrests}){
+export default function Btn({label,value,Intrests_career,setIntrests_career}){
 
     const [flag1,setFlag1]= React.useState(false)
 
@@ -14,9 +14,9 @@ export default function Btn({label,value,Intrests,setIntrests}){
          onClick={()=>{
             setFlag1(!flag1);
         if(flag1){
-            setIntrests((prev) => ({ ...prev, [value]: "false", }));
+            setIntrests_career((prev) => ({ ...prev, [value]: "false", }));
         }else
-        {setIntrests((prev) => ({ ...prev, [value]: "true", }));}
+        {setIntrests_career((prev) => ({ ...prev, [value]: "true", }));}
              }}><p className={flag1? "btn_title":"btn_title_unclick" }>{label}</p></Button>
         </>
     )

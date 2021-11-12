@@ -91,12 +91,36 @@ export default function Signup(){
     }
 }
 
-  const [userverify,setuserverify]=React.useState(false)
+
+const google_auth=()=>{
+  window.location.href = "http://localhost:2345/auth/google"
+  async function google(){
+  try {
+    await axios.post("http://localhost:2345/auth/google")
+    setuserverify(false)
+   } catch (error) {
+     setuserverify(true)
+   }
+  }
   
+}
+
+
+  const [userverify,setuserverify]=React.useState(false)
+  let history = useHistory();
 async function receiver(data) { 
   console.log(data.email,data.phoneno);
   try {
-   await axios.post("http://localhost:2345/register",data).then(res =>{console.log(res.data.token)})      
+   await axios.post("http://localhost:2345/register",data).then(res =>{
+        
+    history.push({
+    pathname: '/Intrest',
+    search:res.data.token,// query string
+    state: {  // location state
+      update: true, 
+    },
+  });
+});
    setuserverify(false)
   } catch (error) {
     setuserverify(true)
@@ -315,11 +339,12 @@ return(
             <p className="or_section">or</p>
           </div>
           <div>
-            <div className="google_singup_img_div">
-              <div className="google_singup_img" alt="" >
+           <div className="google_singup_img_div" >
+           <div onClick={google_auth} className="google_singup_img" alt="" >
                 <SocialIcon url="https://www.google.co.in/" className="google_singup_img_icon"/> 
-                <p  className="btn_info">Continue with Faceboox</p> 
+                <p  className="btn_info">Continue with Google</p> 
               </div>
+              
               <div className="google_singup_img" alt="" >
                 <SocialIcon url="https://www.facebook.com/" className="google_singup_img_icon"/>
                  <p className="btn_info">Continue with Faceboox</p>

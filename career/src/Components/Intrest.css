@@ -28,7 +28,7 @@
     width: 54% !important;
     height: 48px     !important;
     padding: 16px 10px !important;
-    left: 25.06% !important;
+    left: 24.06% !important;
 right: 18.06% !important;
 top: 42.09% !important;
 bottom: 54.16% !important;
@@ -145,7 +145,7 @@ color: #FFFFFF;
 }
 .expore {
     margin-top: 10%;
-    
+  
 }
 .Container_mobile_gray{
     position: absolute;
@@ -169,7 +169,7 @@ height: 8px;
 }
 .gray_div{
     padding: 0% 5% 0% 5%;
-    margin: 0% 0% 0% 0%;
+    margin: 20% 0% 11% 0%;
     width: 90%;
 
 }
@@ -316,6 +316,9 @@ box-sizing: border-box;
     margin-top: 187px;
     height: 328px;
 }
-
+.expore_test{
+    margin-top: 10%;
+    margin-bottom: 30%;
+}
 }
 

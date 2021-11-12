@@ -2,8 +2,12 @@
 import React from "react";
 import "./Intrest.css"
 import {Button} from "@mui/material"
-
-export default function Careerexlporation(){
+import { useLocation ,useHistory} from 'react-router-dom';
+export default function Careerexploration(){
+    const location = useLocation();
+let token=location.search
+console.log(token);
+let history = useHistory();
 return(
 <>
     <div className="Container_mobile">
@@ -12,8 +16,16 @@ return(
     </div>
  
     <div className="title_parent_div">
-        <div className="vector_title_div">
-        <img className="title_vector" src="images/Vector.png" alt="" />
+        <div className="vector_title_div" >
+       <img onClick={()=>{
+  history.push({
+    pathname: '/Intrest',
+    search:token,// query string
+    state: {  // location state
+      update: true, 
+    },
+  });
+       }} className="title_vector" src="images/Vector.png" alt="" />
         </div>
        
     </div>

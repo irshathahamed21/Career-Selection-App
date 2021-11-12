@@ -67,8 +67,7 @@ export default function Login(){
         
         history.push({
         pathname: '/Intrest',
-        search:res.data.token, 
-        id:res.data.user._id, // query string
+        search:res.data.token,// query string
         state: {  // location state
           update: true, 
         },
