@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./Intrest.css"
+import "../Intrest/Intrest.css"
 import {Button} from "@mui/material"
 import { useLocation ,useHistory} from 'react-router-dom';
 export default function Careerexploration(){

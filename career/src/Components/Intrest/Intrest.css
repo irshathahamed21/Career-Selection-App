@@ -230,7 +230,7 @@ box-sizing: border-box;
 }
 .child_img{
     height: 26%;
-    margin: 3% 0% 0% 7%;
+    margin: 3.5% 0% 0% 7%;
     width: 75%;
     position: absolute;
 }
@@ -357,6 +357,8 @@ box-sizing: border-box;
     width: 50%;
     margin: 0% 0% 0% 0%;
 }
-
+.thre_div_ro{
+    justify-content: center;
+    display: flex;}
 }
 

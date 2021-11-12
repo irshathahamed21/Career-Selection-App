@@ -1,5 +1,5 @@
 import React from "react";
-import "./Intrest.css"
+import "../Intrest/Intrest.css"
 import {useHistory} from 'react-router-dom';
 
 export default function Flashexpo(){
@@ -7,7 +7,7 @@ let history = useHistory()
     return(
         <>
         <div onClick={()=>{
-  history.push("/Careerexploration");
+  history.push("/Careermenu");
        }} className="falsh_contaner_ro">
             <img className="flash_img_ro" src="Images/fetti.png" alt="" />
         <div className="Flash_div_ro">
