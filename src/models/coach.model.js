@@ -7,7 +7,7 @@ const coachSchema = new mongoose.Schema({
  experience:{type: String, required: true},
  Image:{type: String, required: true},
   slots:[{type:mongoose.Schema.Types.ObjectId, ref: 'Slot'}],
-  created_at: {type:Date,req:true},
+  created_at: {type:Date,required:true ,default: Date.now},
 },{
   versionKey: false,
   timestamps: true
