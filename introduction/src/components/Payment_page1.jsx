@@ -11,6 +11,10 @@ import left_arrow from "./home_public/24px ICONES.png"
 import wallet from "./home_public/wallet.png"
 import {Button} from "./Button"
 // import {Totals} from ".Showplan"
+import{useState} from "react"
+
+import {prices} from "./Showplan"
+
 const Div =  styled.div`
     width:90%;
     margin:auto;
@@ -95,7 +99,14 @@ const Main_div = styled.div`
 `
 
 function PaymentMethod() {
+   const sum = prices() 
+    const[price, setPrice] = useState(0)
 
+    let ans = JSON.parse(localStorage.getItem("Total"))
+
+    setPrice(ans)
+
+     //console.log(sum)
     return (
         <>
         <Main_div>
@@ -197,14 +208,14 @@ function PaymentMethod() {
             </Para>
         </div>
         <div className = "dura-changet">
-            <Para> Subscription fee  <Para className = "right-float">  Rs. 3000</Para>
+            <Para> Subscription fee  <Para className = "right-float">  price</Para>
             </Para>
             
         </div>
         <hr/>
         <div className = "pay-flex">
             <div className = "blacki">Total <small className = "norma">  (Incl. of all taxes) </small> </div>
-            <div className = "blacki">Rs 3000</div>
+            <div className = "blacki">price </div>
         </div>
            
         </Payment_details>

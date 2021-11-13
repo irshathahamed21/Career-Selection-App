@@ -1,5 +1,5 @@
 
-import {Showplans} from "./Showplan"
+import {Showplans, prices} from "./Showplan"
 function Plans({plan}) {
 
     

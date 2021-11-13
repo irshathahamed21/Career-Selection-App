@@ -32,20 +32,24 @@ function Booking() {
     const[data, setData] = useState([])
 
 
-    // useEffect (()=> {
-        
-    //   async function go() {
-    //       const data = await fetch("http://localhost:2345/coach/item");
-
-    //       const res = await data.json()
-    //       setData(res)
-    //       console.log(res)
-    //   }
-    //   go()
-        
-    //   },[]) // previously [] // now to run function on every time page variable changes we put page inside array
-      
-      
+     // now to run function on every time page variable changes we put page inside array
+    
+      useEffect(() => {
+        console.log("abc")
+        async function getData(){
+            console.log("123")
+            const res= await fetch(" http://localhost:2345/coach/").then((d)=>
+            d.json()
+            );
+            setData(res.item)
+            console.log("abcd")
+            console.log(res.item)
+          }
+  
+        getData()
+          
+         
+      }, [])
       
          
            
@@ -74,6 +78,10 @@ function Booking() {
 
 
         </div>
+        
+        <div className = "parag">
+            Make the best use of your first
+            </div>
 
 
 

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { useRef } from "react"
+import { useRef,useState, useEffect } from "react"
 // import {Total} from "Total"
 const Button_book = styled.button`
     border: 1px solid green;
@@ -64,23 +64,38 @@ const Div = styled.div`
 
 
 `
+function prices(a) {
+    console.log(a)
+    return a
+}
+
 
 
 function Showplans({details}) {
     const total = useRef(0)
+    // const[price, setPrice] = useState("3000")
     
     const handleTotal = () => {
         total.current = details.Total
         console.log(total.current)
-        //Totals(total.current)
-
-
-       
- //       total.current
- 
         
+     let pric = total.current
+     localStorage.setItem("Total", "pric")
 
     }
+   
+
+
+    // useEffect( ()=> {
+    //     prices(price)
+    // },[])
+    
+            
+ //       total.current
+        
+        
+
+    
   
     return (
         <>
@@ -106,4 +121,4 @@ function Showplans({details}) {
    
 }
 
-export {Showplans}
+export {Showplans, prices}
