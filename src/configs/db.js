@@ -4,7 +4,7 @@ const config = require('config');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/auth-web11", {
+    await mongoose.connect("mongodb+srv://Education:Education@cluster0.8mhay.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
       // useCreateIndex: true,
       useUnifiedTopology: true,
      // useFindAndModify: false,
