@@ -4,7 +4,7 @@ import styled from "styled-components"
 import photo1 from "./home_public/photo1.png"
 import photo2 from "./home_public/photo2.png"
 import photo3 from "./home_public/photo3.png"
-import {Navbar} from "./Nav_bar"
+
 
 const Div = styled.div`
     max-width:90%;
@@ -82,7 +82,7 @@ function Home() {
     return (
         <>
         
-        <Navbar/>
+        
 
         <Div>
                       

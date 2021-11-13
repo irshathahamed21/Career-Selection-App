@@ -6,15 +6,20 @@ import {Roadmap} from "./components/Roadmap"
 
 import {PaymentMethod} from "./components/Payment_page1"
 import {Card_payment} from "./components/Card_payment"
+import {Booking} from "./components/Booking"
+import {ResultCalendar} from "./components/Calendar"
 function App() {
 
 
  return (
   //  <Home/>
   <>
-    {/* <Roadmap/> */}
+   
+    <Booking />
     <PaymentMethod/>
     <Card_payment/>
+    <ResultCalendar/>
+  
     </>
 
   

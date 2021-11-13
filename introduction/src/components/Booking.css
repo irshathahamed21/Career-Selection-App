@@ -1,0 +1,25 @@
+.flex-div {
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    margin:auto;
+    border:2px solid black;
+
+}
+.green-bg {
+    background-color: lightgreen;
+    width:100%;
+    /* border:2px solid red; */
+    
+}
+.booking-para {
+    font-size: 18px;
+    width:80%;
+    margin:auto;
+    text-align: center;
+}
+.main-div {
+    width:30%;
+    margin:auto;
+    
+}

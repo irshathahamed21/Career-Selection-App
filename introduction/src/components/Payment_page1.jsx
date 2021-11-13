@@ -10,7 +10,7 @@ import upi from "./home_public/wallet-money.png"
 import left_arrow from "./home_public/24px ICONES.png"
 import wallet from "./home_public/wallet.png"
 import {Button} from "./Button"
-
+// import {Totals} from ".Showplan"
 const Div =  styled.div`
     width:90%;
     margin:auto;
@@ -93,7 +93,6 @@ const Main_div = styled.div`
     width:30%;
     margin:auto;
 `
-
 
 function PaymentMethod() {
 
