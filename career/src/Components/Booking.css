@@ -27,18 +27,4 @@
     text-align:center;
     
 }
-.box {
-    display:flex;
-    margin:5%;
 
-}
-.experts-row {
-    display:flex;
-    flex-direction:row;
-    width:100%;
-    margin:auto;
-}
-.expert-row > .box {
-    
-    width:30%;
-}

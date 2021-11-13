@@ -28,7 +28,7 @@ const Div = styled.div`
 
     
 
-    & .box {
+    & .box_irs {
        
         border-radius:5px;
         background-color:white;
@@ -55,7 +55,7 @@ function Expertdetails({details}) {
         <>
         <Div>
           
-        <div className = "box">
+        <div className = "box_irs">
         <div> <img src= {details.Image} alt = "image" /></div>
             <div >{details.Name}</div>
             <div>{details.type}</div>

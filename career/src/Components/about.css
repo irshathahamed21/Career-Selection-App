@@ -1,0 +1,62 @@
+.c6{
+    height: 315px;
+    background: #3C4852;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    padding-left: 24px;
+  }
+  .cont1{
+    margin-top: 34px;
+    display: flex;
+    gap:224px;
+    flex-direction: row;
+  }
+  .cont2{
+    display: flex;
+    gap: 181px;
+    flex-direction: row;
+  }
+  .cont3{
+    display: flex;
+    gap: 149px;
+    flex-direction: row;
+  }
+  .cont4{
+    display: flex;
+    gap: 161.25px;
+    flex-direction: row;
+  }
+  .but1, .but2, .but3, .but4{
+    font-size: 24px;
+    background: #3C4852;
+    border: none;
+    color: white;
+    float:right;
+  }
+  .cont5{
+    margin-top: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    line-height: 14px;
+    
+  }
+  .cont6{
+    padding-top: -5px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-align: left; 
+    display: flex;
+    gap: 12px;
+    flex-direction: row; 
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    line-height: 14px;
+  }

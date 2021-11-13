@@ -5,6 +5,7 @@ import "./Calendar.css";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import { useLocation,useHistory } from 'react-router-dom';
+import Navbar from "./Navbar/Navbar"
 function ResultCalendar() {
 
     const[calDate, setCalDate] = useState(new Date())
@@ -39,6 +40,9 @@ function ResultCalendar() {
 
     return (
         <>
+        <div>
+            <Navbar />
+        </div>
         <div className = "result-calendar">
             <Calendar onChange = {onChange}
             value = {calDate}/>

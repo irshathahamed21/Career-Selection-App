@@ -51,16 +51,18 @@ letter-spacing: -0.02em;
 color: #000000;
 }
 .box{
-    position: absolute;
+  position: absolute;
     width: 70%;
     height: 230px;
     left: 54px;
     top: 235px;
     border-color: coral;
-    border:1px solid;
-    box-shadow: 
+ 
+  
     padding: 25px;
-     box-shadow: 0px -30px 5px #888;
+    box-shadow: 0px -20px 13px #888;
+     border:none solid;
+
 }
 .buttons{
     display:flex;

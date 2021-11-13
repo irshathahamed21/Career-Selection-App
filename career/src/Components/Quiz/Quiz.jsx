@@ -32,7 +32,7 @@ const HeaderNavbar = styled.header`
     justify-content: center;
     align-items: center;
     padding: 16px 10px;
-    margin-top:100px;
+   
     position: absolute;
     width: 80%;
     height: 15px;
@@ -43,6 +43,7 @@ border:none;
 color:white;
 background: #628E62;
 border-radius: 5px;
+margin: 32% 0% 0% 6%;
 }
 .test{
     position: absolute;

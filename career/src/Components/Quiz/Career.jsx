@@ -9,7 +9,7 @@ import Vediocards4  from "./Vedio Cards (4).svg"
 import Rr from "./LOGO (2).png"
 import RR from "./24px ICONES.png"
 import '../Navbar/navbar.css';
-
+import Navbar from "../Navbar/Navbar"
 const Navbardddd = styled.header`
 .carrer{
   position: absolute;

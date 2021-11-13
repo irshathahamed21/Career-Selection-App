@@ -6,7 +6,7 @@ import {Expertlist} from "./Expert_list"
 import {useState, useEffect} from "react"
 import "./Booking.css"
 import { useLocation,useHistory } from 'react-router-dom';
-
+import Navbar from "./Navbar/Navbar"
 
 
 function Booking() {
@@ -59,7 +59,7 @@ function Booking() {
 
     return (
         <div className = "main-div" >
-       
+            <Navbar />
         <div className = "headin">
         <h4>
         <a href = "">

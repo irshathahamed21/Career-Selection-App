@@ -24,7 +24,7 @@ import {Career} from'./Components/Quiz/Career.jsx'
 import {Videobar} from'./Components/Quiz/Video.jsx'
 import HeaderNav from'./Components/Quiz/Quiz'
 
-
+import First from './Components/First';
 import {PaymentMethod} from "./Components/Payment_page1"
 import {Cardpayment} from "./Components/Card_payment"
 import {Booking} from "./Components/Booking"
@@ -40,7 +40,7 @@ function App() {
     <div>
     <Switch>
     <Route path="/" exact >
-    {/* <First /> */}
+    <First />
       </Route>
 
     
@@ -88,7 +88,7 @@ function App() {
     </Switch>
       </div>
   
-      <div className="App">
+      <div >
      
     <Switch>
    <Route path="/Quiz" exact>
@@ -96,14 +96,14 @@ function App() {
    </Route>
     </Switch>
     </div>
-    <div className="App">
+    <div >
     <Switch>
    <Route path="/Quiz/Page1">
       <Page1/>
    </Route> 
    </Switch>
    </div>
-   <div className="App">
+   <div >
     
     <Switch>
    <Route path="/Quiz/Page2">
@@ -114,7 +114,7 @@ function App() {
    
     </div>
 
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page3">
@@ -124,7 +124,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page4">
@@ -134,7 +134,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page5">
@@ -144,7 +144,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page6">
@@ -154,7 +154,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page7">
@@ -165,7 +165,7 @@ function App() {
    
     </div>
 
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page8">
@@ -175,7 +175,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page9">
@@ -185,7 +185,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Page10">
@@ -195,7 +195,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Awsome">
@@ -205,7 +205,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Map">
@@ -215,7 +215,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Started">
@@ -225,7 +225,7 @@ function App() {
     </Switch>
    
     </div>
-    <div className="App">
+    <div >
     
     <Switch>
    <Route path="/Quiz/Career">
@@ -235,7 +235,7 @@ function App() {
     </Switch>
    
     </div>
-     <div className="App">
+     <div >
     
     <Switch>
    <Route path="/Quiz/Video">

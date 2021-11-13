@@ -1,0 +1,10 @@
+.start_kal{
+    height: 48px;
+    width: 180px;
+    margin-left: 90px;
+    border-radius: 50px;
+    border: none;
+    padding: 16px, 10px, 16px, 10px;  
+    background: #628E62;
+    color: white;
+}

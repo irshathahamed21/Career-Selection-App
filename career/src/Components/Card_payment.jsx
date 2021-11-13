@@ -1,7 +1,7 @@
 import styled from "styled-components"
 // import Cleave from 'cleave.js/react';
 import left_arrow from "./home_public/24px ICONES.png"
-
+import Navbar from "./Navbar/Navbar"
 import { useLocation,useHistory } from 'react-router-dom';
 import {Button} from "./Button"
 
@@ -102,8 +102,9 @@ function Cardpayment() {
     return (
         <>
         <Main_div>
-            <hr/>
+            
         <Div>
+            <Navbar />
         <h4>
         <a href = "">
                 <img className = "prev-link" src = {left_arrow} alt = ""/>

@@ -10,7 +10,7 @@ import upi from "./home_public/wallet-money.png"
 import left_arrow from "./home_public/24px ICONES.png"
 import { useLocation,useHistory } from 'react-router-dom';
 import wallet from "./home_public/wallet.png"
-
+import Navbar from "./Navbar/Navbar"
 import {Button} from "./Button"
 // import {Totals} from ".Showplan"
 import{useState} from "react"
@@ -117,9 +117,13 @@ function PaymentMethod() {
     let history = useHistory();
     return (
         <>
+        <div>
+           
+        </div>
         <Main_div>
-        <hr/>
+        
         <Div>
+        <Navbar />
         <h4>
             <a href = "">
                 <img className = "prev-link" src = {left_arrow} alt = ""/>

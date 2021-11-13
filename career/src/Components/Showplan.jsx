@@ -23,12 +23,12 @@ const Button_book = styled.button`
 const Div = styled.div`
     
     width:100%;
-    border: 2px solid blue;
+  
 
 
     
 
-    & .box {
+    & .box_irs {
        
         border-radius:5px;
         background-color:white;
@@ -41,7 +41,7 @@ const Div = styled.div`
         
         
     }
-    & .box > div , .Button_book {
+    & .box_irs > div , .Button_book {
         margin-top:3%;
         margin-bottom:3%;
       
@@ -96,7 +96,7 @@ function Showplans({details,token}) {
     return (
         <>
         <Div>
-        <div className = "box">  
+        <div className = "box_irs">  
         <div className = "details">{details.off}% OFF</div>
         <div className = "month" >{details.Duration}</div>
         <div className = "price">₹ {details.Total}</div>
