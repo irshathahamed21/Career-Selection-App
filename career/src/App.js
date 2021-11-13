@@ -23,6 +23,12 @@ import {Map} from'./Components/Quiz/Map.jsx'
 import {Career} from'./Components/Quiz/Career.jsx'
 import {Videobar} from'./Components/Quiz/Video.jsx'
 import HeaderNav from'./Components/Quiz/Quiz'
+
+
+import {PaymentMethod} from "./Components/Payment_page1"
+import {Cardpayment} from "./Components/Card_payment"
+import {Booking} from "./Components/Booking"
+import {ResultCalendar} from "./Components/Calendar"
 import {
   Switch, 
   Route
@@ -33,7 +39,12 @@ function App() {
     <>
     <div>
     <Switch>
-      <Route path="/Signup" exact >
+    <Route path="/" exact >
+    {/* <First /> */}
+      </Route>
+
+    
+      <Route path="/Signup"  >
       <Signup /> 
       </Route>
 
@@ -60,6 +71,19 @@ function App() {
       <Route path="/Careervid" >
       <Videomenu /> 
       </Route>
+      
+   {/* // */}
+
+   <Route path="/Paymentir">
+      <PaymentMethod /> 
+      </Route> <Route path="/Cardpaymentir">
+      <Cardpayment /> 
+      </Route> <Route path="/Booking" >
+      <Booking /> 
+      </Route> <Route path="/ResultCalendar">
+      <ResultCalendar /> 
+      </Route>
+
       
     </Switch>
       </div>

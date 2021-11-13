@@ -214,6 +214,12 @@ export  function Started() {
         <img className="img2" src={raj}></img>
         </div>
         <p className="book">Book your seat for free counselling session</p>
-        <button>Book Now</button>
+        <button onClick={()=>{ history.push({
+        pathname: '/Booking',
+        search:token,
+        state: {  
+          update: true, 
+        },
+      });}}>Book Now</button>
     </Nav>
 };
