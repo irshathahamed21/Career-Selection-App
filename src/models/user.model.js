@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     phoneNumber:{type:Number,required:false},
     education:{type: String, required: false},
     password: {type: String, required: true, minLength: 8, maxLength: 100},
-    intrests: [{type: String, required: false}],
+    intrests: {type: Array, required: false},
     appointments:[{type: mongoose.Schema.Types.ObjectId, required: false, ref: 'appointments'}]
 }, {
     versionKey: false,
