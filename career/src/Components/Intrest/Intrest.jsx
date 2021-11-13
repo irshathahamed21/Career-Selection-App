@@ -5,7 +5,7 @@ import {Button} from "@mui/material"
 import Btn from "./Intrest_btn"
 import { useLocation,useHistory } from 'react-router-dom';
 
-
+import Navbar from "../Navbar/Navbar"
 
 export default function Intrest(){
     const myflag = useRef(false)
@@ -76,7 +76,7 @@ return(
     <div className="Container_mobile">
      
     <div>
-      navbar
+    <Navbar />
     </div>
     <div className="title_parent_div_intr">
         <div className="vector_title_div">
@@ -148,7 +148,13 @@ return(
         <p className="intrest_info">Take a small test to understand what you may like or is possible for you to go forward with.</p>
         </div>
         <div  ref={myRef} className="expore_test">
-            <Button className="exp_btn"><p className="exp_btn_title">Interest Test</p></Button>
+            <Button onClick={()=>{ history.push({
+        pathname: '/Quiz',
+        search:token,
+        state: {  
+          update: true, 
+        },
+      });}} className="exp_btn"><p className="exp_btn_title">Interest Test</p></Button>
             
         </div>
         </div >

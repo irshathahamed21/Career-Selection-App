@@ -5,6 +5,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
 import {Link,useHistory} from "react-router-dom"
+import Navbar from "../Navbar/Navbar"
 import axios from "axios";
 
 const initstate={
@@ -180,7 +181,7 @@ async function receiver(data) {
 return(
 <>
   <div className="Container_mobile">
-    <div>navbar</div>
+    <div><Navbar /></div>
       <div className="title_parent_div">
           <div className="title_div">
               <img className="title_vector" src="images/Vector.png" alt="" />

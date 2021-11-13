@@ -3,6 +3,7 @@ import React from "react";
 import "../Intrest/Intrest.css"
 import {Button} from "@mui/material"
 import { useLocation ,useHistory} from 'react-router-dom';
+import Navbar from "../Navbar/Navbar"
 export default function Careerexploration(){
     const location = useLocation();
 let token=location.search
@@ -12,14 +13,14 @@ return(
 <>
     <div className="Container_mobile">
     <div>
-      navbar
+     <Navbar />
     </div>
  
     <div className="title_parent_div">
         <div className="vector_title_div" >
        <img onClick={()=>{
   history.push({
-    pathname: '/Intrest',
+    pathname: '/Quiz/page10',
     search:token,// query string
     state: {  // location state
       update: true, 
@@ -64,8 +65,13 @@ return(
     </div>
     <div className="expore_caree_exp">
             <Button onClick={()=>{
-  history.push("/Flashexpo");
-       }} className="exp_btn"><p className="exp_btn_title">Lets Get Started</p></Button>
+  history.push({
+    pathname: '/Quiz/Started',
+    search:token,// query string
+    state: {  // location state
+      update: true, 
+    },
+  })}} className="exp_btn"><p className="exp_btn_title">Lets Get Started</p></Button>
         </div>
     </div>
 </>

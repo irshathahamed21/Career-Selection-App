@@ -5,6 +5,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { SocialIcon } from 'react-social-icons';
 import "./Singup.css"
 import axios from "axios";
+import Navbar from "../Navbar/Navbar"
 import {Link,Redirect,useHistory} from "react-router-dom"
 const initstate={
  email:"",
@@ -88,7 +89,7 @@ return (
 <>
   <div className="Container_mobile">
     <div>
-      navbar
+    <Navbar />
     </div>
     <div className="title_parent_div">
       <div className="title_div">
@@ -167,7 +168,7 @@ return (
     </div>
     <div className="login_part_login_pge">
       <p className="sign_info">New to Education?</p>
-      <Link to="/">  <p className="login_link">Create Account</p></Link>
+      <Link to="/Signup">  <p className="login_link">Create Account</p></Link>
     </div>
   </div>
 </>
