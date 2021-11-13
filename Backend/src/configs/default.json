@@ -1,0 +1,11 @@
+{
+    "mongoURI": "mongodb+srv://Education:<password>@cluster0.8mhay.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtKey": "",
+    "appointmentStatus": [
+      "requested",
+      "accepted",
+      "rejected",
+      "completed",
+      "unknown"
+    ]
+  }

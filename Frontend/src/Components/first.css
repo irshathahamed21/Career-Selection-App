@@ -1,0 +1,101 @@
+.c1>h1{
+    height: 94px;
+    width: 312px;
+    padding-left: 24px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 47.41px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #3C4852;
+}
+.c1>p{
+    height: 48px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #3C4852;
+}
+.c1-image{
+    margin-left: 35px;
+}
+.c2{
+    height: 299.30543535984305px;
+    width: 474.65784351742343px;
+    margin-left: -44.998046875px;
+    transform: rotate(2.87deg);
+    background: linear-gradient(262.51deg, rgba(118, 120, 226, 0.2) 22.36%, rgba(161, 121, 226, 0.2) 81.48%);
+  }
+  .c2>h3{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: center; 
+    margin-top: 40px;
+    transform: rotate(-2.87deg);
+    padding-top: 40px;
+    color: #3C4852;
+  }
+  .c2>p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    transform: rotate(-2.87deg);
+    margin: 0px 120px 70px 105px;
+    color: #3C4852;
+}
+
+.c3{
+    height: 165px;
+    width: 190px;
+    margin-left: 90px;
+    margin-top: 60px;
+    border: 1px solid #FFB600;
+    box-sizing: border-box;
+}
+.c3-image{
+    height: 156px;
+    width: 180px;
+    margin: 11px 13px -2px -3px;
+}
+.c3-p{
+    margin: 24px 24px 18px; 
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.7px;
+    letter-spacing: -0.02em;
+    text-align: center; 
+    color: #3C4852;  
+}
+
+.c4{
+    height: 146px;
+    width: 146px;
+    margin-left: 84px;
+    margin-top: 60px;
+    border: 1px solid #FFCEBF;
+    border-radius: 0px 0px 73px 73px;
+}
+.c4-image{
+    position: absolute;
+    width: 148px;
+    height: 146px;
+    margin: 5px;
+    border-radius: 0px 0px 73px 73px;
+}
+.c3-p{
+    margin: 24px 24px 18px; 
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.7px;
+    letter-spacing: -0.02em;
+    text-align: center; 
+    color: #3C4852;  
+}
