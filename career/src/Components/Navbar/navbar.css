@@ -1,0 +1,19 @@
+.nav{
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    position: absolute;
+    width: 93.6px;
+    height: 29.18px;
+    margin-left: 15.4px;
+    margin-top: 11.91px;    
+}
+.menu{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    margin-left: 91%;
+    margin-top: 15.91px; 
+}

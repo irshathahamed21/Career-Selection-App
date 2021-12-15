@@ -1,0 +1,73 @@
+.cross{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    margin-left: 312px;
+    margin-top: 17px;    
+}
+.v1>button, .v2>button, .v3>button, .v4>button, .v5>button{
+    border: none;
+    background: #FFFFFF;
+    position: absolute;
+    margin: 22.22px 36.8px;
+    transform: rotate(-90deg);
+}
+.menu{
+    position: absolute;
+    width: 360px;
+    height: 450px;
+    margin-top: 56px; 
+    margin-left: 0px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.v1{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    background: rgba(147, 170, 147, 0.2);
+    height: 112px;
+}
+
+.v2, .v3, .v4, .v5{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3C4852;
+    height: 56px;
+}
+.v1>button{
+    margin-top: 45px;
+    background: rgba(218, 236, 218, 0.2);
+}
+.v1>p{
+    margin-left: 220px;
+    margin-top: 45px;
+}
+.v2>p{
+    margin-left: 160px;
+} 
+.v3>p{
+    margin-left: 220px;
+} 
+.v4>p{
+    margin-left: 225px;
+} 
+.v5>p{
+    margin-left: 220px;
+} 
+.icon{
+    position: absolute;
+    right: 8.33%;
+    top: 8.33%;
+    bottom: 8.33%;
+    left: 280px;
+    height: 73.17px;
+    width: 73.17px;
+    background: rgb(89, 161, 89);
+    opacity: 0.2;
+}
