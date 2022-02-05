@@ -96,6 +96,39 @@ To run this project, you will need to add the following environment variables to
 - Do payment with any type of method(Card/UPI/Net-banking)
 
 
+## Home Page
+![Screenshot (25).png](https://miro.medium.com/max/1400/1*GtS1bMjuvDBrSct1IR5EVw.png)
+![Screenshot (30).png](https://miro.medium.com/max/1400/1*GtS1bMjuvDBrSct1IR5EVw.png)
+## Bottom Page
+![Screenshot (30).png](https://miro.medium.com/max/1400/1*GtS1bMjuvDBrSct1IR5EVw.png)
+
+## carrer suggections
+
+![Screenshot (31).png](https://miro.medium.com/max/1400/1*zSFQ66_2KG0onPiRoZSUJQ.png)
+
+## Signin Page/Signup Page
+
+![Screenshot (33).png](https://miro.medium.com/max/1384/1*VRfWzLBFYQEsKPjSebkVoQ.png)
+
+
+
+![Screenshot (34).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1633267313549/YRtQqfCvx.jpeg?auto=compress,format&format=webp)
+
+## intrests Page
+
+![Screenshot (35).png](https://miro.medium.com/max/1384/1*gOx4NcFhwh8s-pE_cdB9gA.png)
+
+## intrest Details 
+
+![Screenshot (36).png](https://miro.medium.com/max/1384/1*gOx4NcFhwh8s-pE_cdB9gA.png)
+
+## road map
+
+![Screenshot (36).png](https://miro.medium.com/max/1384/1*p3TGBDZfHQrwpjYr8BYT3w.png)
+
+
+
+
 ## Acknowledgements
 
  - [Masai School](https://masaischool.com/)
